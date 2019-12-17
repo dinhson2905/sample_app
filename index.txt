@@ -1,0 +1,41 @@
+Chap 6. Modeling users
+- Chương này học về cách tạo một mô hình users và cách lưu trữ thông tin đó.
+- chương 7, cho phép signup, tạo trang profile
+- chương 8, 9, hoàn chỉnh login logout
+- Chương 10, bảo vệ pages khỏi sự truy cập trái phép,
+- Chương 11, 12, học về kích hoatj tài khoản, và reset password.
+- Từ 6 --> 12 là làm về 1 hệ thống xác thực, đăng nhập đầ y đủ.
+
+6.1. User model
+    - Active Record: thư viện mặc định để thao tác với CSDL.
+        + Nó đi kèm 1 loạt các phương thức creating, saving, finding,... mà không cần phải sử dụng ngôn ngữ SQL
+    - migrations: là 1 tính năng của rails, cho phép data definitions bằng rails thuần túy.
+6.1.1. Database migrations
+    - rails generate model User name:string email:string
+    - lưu ý rằng users_controller nhưng user.rb
+    - migrations cung cấp một cho việc thay đổi của database incrementally, để mô hình thích ứng với những thay đổi.
+    - tên của tệp db/migrate lưu thông tin thời điểm tạo file (20191217142551_create_users.rb) 
+    - change method xác định việc thay đổi được thực hiện cho CSDL
+    - t.timestamps là lệnh đặc biệt, tạo ra 2 trường là created_at, và updated_at.
+    - rails db:rollback để quay lại 1 bước
+6.1.2. THe model file
+6.1.3. Creating user object
+6.1.4. Finding user objects
+
+
+6.2. User validations
+6.2.1. A validity test
+6.2.2. Validating presence 
+6.2.3. Length validation
+6.2.4. Format validation
+    - %w[]: để tạo 1 mảng của string
+    - Rubular 
+6.2.5. Uniqueness validation
+    - Có một vấn đề nhỏ là, xác thực tính duy nhất ở Active Record không đảm bảo tính duy nhát ở CSDL
+
+
+
+
+
+6.3. Adding a secure password 
+6.4. Conclution        
