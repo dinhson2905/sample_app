@@ -26,16 +26,24 @@ Chap 6. Modeling users
 6.2. User validations
 6.2.1. A validity test
 6.2.2. Validating presence 
+    - Nghĩa là thuộc tính đó nhất định phải có mặt
 6.2.3. Length validation
 6.2.4. Format validation
     - %w[]: để tạo 1 mảng của string
     - Rubular 
 6.2.5. Uniqueness validation
     - Có một vấn đề nhỏ là, xác thực tính duy nhất ở Active Record không đảm bảo tính duy nhát ở CSDL
-
-
-
-
+    - Vì vậy, mặc dù là đã có uniquess rồi, nhưng khi có một số lượng truy cập đáng kể, trường hợp bị trùng email
+      vẫn có thể xảy ra khi người dùng bấm submit 2 lần một cách nhanh chóng.
+    - Do đó, ta phải add index cho email ở mức CSDL, --> add_index_to_email
 
 6.3. Adding a secure password 
-6.4. Conclution        
+    - Cần một phương thức để yêu cầu người dùng phải có password (vói một password confirmation)
+    - Lưu phiên bản hashed của mật khẩu trong CSDL.
+    - Cái hashed này không thể suy ngược lại mật khẩu của người dùng.
+    - Phương pháp xác thực là lấy mật khẩu của người dùng, rồi băm nó ra. Lấy cái băm ra đó, so sánh với giá trị trong CSDL.
+    - password và password_confirmation là cặp thuộc tính ảo 
+    - user.authenticate("foobar")
+6.4. Conclution      
+    - Migration
+    - Active Record đi kèm 1 lượng lớn phương thức để thao tác với CSDL
