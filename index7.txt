@@ -19,10 +19,33 @@ Chương 7. Sign up
 
 7.3. Unsuccessful signups
 7.3.1 A working form 
+    - params chứa 1 cấu trúc hàm băm 
 7.3.2 Strong parameter
+    - params.require(:user).permit(:name, :email, :password, :password_confirmation)
+7.3.3 Signup error messages
+    - errors.full_messages
+    - pluralize: phương thức chia số nhiều.
+7.3.4 A test for invalid submission
+    - assert_not_difference
 
 7.4. Successful signups 
+7.4.1 The finished signup form
+7.4.2 The flash
+7.4.3 The first signup
+7.4.4 A test for valid submission 
+    - assert_difference
 
 7.5. Professional-grade deployment
-
+    - Phần này thì chịu
 7.6. Conclusion
+    - hiển thị thông tin bug qua phương thức debug
+    - Sass mixins cho phép 1 nhóm các quy tắc CSS được bundle và tái sử dụng ở nhiều chỗ
+    - 3 môi trường: development, test, production
+    - resource :users
+    - Gravatars cung cấp một cách thuận tiện để hiển thị hình ảnh đại diện cho người dùng.
+    - form_for được sử dụng để tạo các form để tương tác với Active Record objects
+    - Signup failure sẽ render trang new_user và hiển thị các thông báo lỗi được xác định tự động bởi Active Record.
+    - Rails cung cấp flash như một cách tiêu chuẩn để hiển thị các tin nhắn tạm thời. (Lần đầu tiên người dùng đăng nhập thành công)
+    - Signup success sẽ tạo user trong CSDL, điều hướng đến trang show, và hiển thị flash
+    - Sử dụng integration test để xác minh form submission behavior và catch regressions.
+    

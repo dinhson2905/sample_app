@@ -1,0 +1,27 @@
+Chương 8. Basic login
+8.1 Sessions
+    - HTTP là 1 stateless protocol. Nghĩa là coi mỗi request là 1 transaction độc lập, không thể sử dụng bất kỳ thông tin gì của request trước.
+    - Vậy nên, các ứng dụng web yêu cầu user login phải sử dụng session (là kết nối semi-permanent giữa 2 máy tính)
+    - Kỹ thuật chung để thực hiện session là sử dụng cookies (là những mẩu text được đặt trên user' browser). Bởi vì cookies tồn tại khi chuyển trang
+    - session method, cookies method.
+
+8.1.1 Sessions controller
+    - rails generate controller Sessions new
+8.1.2 Login form
+8.1.3 Finding and authenticating a user
+8.1.4 Rendering with a flash message
+8.1.5 A flash test
+    - rails generate integration_test users_login
+
+8.2 Logging in
+8.2.1 The log_in method
+8.2.2 Current user
+8.2.3 Changing the layout links
+8.2.4 Testing layout changes
+8.2.5
+
+8.3 Logging out
+8.3.1
+8.3.1
+
+8.4 Conclusion 
